@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
+}
+
+header, nav {
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 1px 10px rgb(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem;
+
+    & .nav-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        width: 100%;
+
+        & img {
+            width: 70px;
+            height: auto;
+        }
+    }
+
+    & .nav-links {
+        width: 100%;
+
+        & ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            padding: 15px;
+    
+            & li {
+                color: #003399;
+
+                font-weight: 500;
+
+                text-decoration: none;
+                text-align: center;
+
+                width: 100%;
+                margin-inline: 0.5rem;
+    
+                & a {
+                    text-decoration: none;
+                    font-size: large;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 10px 10px 0 0;
+
+    padding: 20px;
+
+    background-color: #003399;
+    bottom: 0;
+
+    color: aliceblue;
+
+    & .social {
+        margin-block: 10px;
+        text-align: center;
+
+        & img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+a:visited {
+    color: #003399;
+}
+
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row;
+        position: fixed;
+
+        background-color: white;
+        
+        width: 100%;
+
+        z-index: 1;
+
+        & .nav-logo {
+            justify-content: start;
+            flex: 1.5;
+        }
+
+        & .nav-links {
+            flex: 1;
+        }
+    }
+}

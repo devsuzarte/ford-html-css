@@ -1,0 +1,119 @@
+video {
+    width: 100%;
+}
+
+.car {
+    margin-bottom: 42px;
+    box-shadow: 0 8px 6px rgb(0, 0, 0, 0.2);
+    padding: 50px 20px;
+    border-radius: 8px;
+    
+    & .car-infos {
+        & .car-selection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        & p {
+            text-align: justify;
+        }
+
+        & input {
+            transform: scale(1.5);
+        }
+
+        & h4 {
+            text-align: end;
+            padding: 8px;
+        }
+
+        & .car-title {
+            color: #003399;
+            font-weight: 600;
+            font-size: medium;
+            text-align: center;
+        }
+
+        & .car-texts {
+            padding-inline: 16px;
+        }
+
+        & img {
+            height: 20px;
+            width: 20px;
+        }
+    }
+}
+
+.car-compare {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & button {
+        background-color: #003399;
+        color: aliceblue;
+        border: none;
+        padding: 16px;
+        border-radius: 8px;
+        margin-block: 30px;
+        width: 100%;
+        font-weight: 600;
+    }
+
+    & h1 {
+        text-align: center;
+        font-weight: bolder;
+        margin-bottom: 16px;
+        color: #003399;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .car-table {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+
+        & tbody {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-column-gap: 16px;
+        }
+    }
+
+    .car-compare {
+        display: flex;
+        justify-content: center;
+        & .car-submit-button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            & button {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .car-table {
+        & tbody {
+            grid-template-columns: auto auto auto;
+        }
+    }
+
+    .car {
+        margin: 0;
+        height: 100%;
+        min-height: 400px;
+    }
+}
