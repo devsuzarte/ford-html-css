@@ -59,6 +59,7 @@ nav {
                 margin-inline: 0.5rem;
     
                 & a {
+                    color: #003399;
                     text-decoration: none;
                     font-size: large;
                 }
