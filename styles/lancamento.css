@@ -30,7 +30,7 @@ video {
         }
 
         & .car-title {
-            color: #003399;
+            color: #1351d8;
             font-weight: 600;
             font-size: medium;
             text-align: center;
@@ -54,7 +54,7 @@ video {
     justify-content: center;
 
     & button {
-        background-color: #003399;
+        background-color: #1351d8;
         color: aliceblue;
         border: none;
         padding: 16px;
@@ -68,7 +68,7 @@ video {
         text-align: center;
         font-weight: bolder;
         margin-bottom: 16px;
-        color: #003399;
+        color: #1b357e;
     }
 }
 
