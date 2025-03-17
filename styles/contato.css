@@ -37,6 +37,12 @@ button {
     margin-bottom: 30px;
     width: 100%;
     font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    font-size: large;
+    transition: font-size 1s;
 }
 
 @media (min-width: 1024px) {
