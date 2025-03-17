@@ -44,8 +44,12 @@
                             <img class="car-image" src="../assets/img/storm.jpg" alt="Carro Ford Storm">
                             <div class="car-infos">
                                 <div class="car-selection">
-                                    <input id="car-checkbox-storm" class="car-checkbox" type="checkbox">
-                                    <label for="car-checkbox-storm" class="car-title">Ford Ranger Storm 2022</label>
+
+                                    <input id="car-checkbox-storm" class="car-checkbox" type="checkbox"
+                                    onchange="SetCarToCompare(this, new Car('Storm 3.2 Diesel 4X4 AT 2022', 222790.00, '../assets/img/storm.jpg', 3.2, 'Liga Leve 17', 200, 1180, 511, 1821, 232, 1040))">
+
+                                    <label for="car-checkbox-storm" class="car-title">Storm 3.2 Diesel 4X4 AT 2022</label>
+
                                     <img class="car-help" src="../assets/img/info.png" alt="Mais informações sobre o carro Ford Storm">
                                 </div>
                                 <p class="car-desc">Corporis libero officiis nostrum saepe ullam architecto sit in sunt nihil neque</p>
@@ -59,8 +63,11 @@
                             <img class="car-image" src="../assets/img/XL Cabine.jpg" alt="Carro Ford Storm">
                             <div class="car-infos">
                                 <div class="car-selection">
-                                    <input id="car-checkbox-cabine" class="car-checkbox" type="checkbox">
-                                    <label for="car-checkbox-cabine" class="car-title">Ford Ranger XL Cabine 2022</label>
+                                    <input id="car-checkbox-cabine" class="car-checkbox" type="checkbox"
+                                    onchange="SetCarToCompare(this, new Car('XL Cabine Simples 2.2 Diesel 4X4 MT 2022', 222790.00, '../assets/img/XL Cabine.jpg', 3.2, 'Liga Leve 17', 200, 1180, 511, 1821, 232, 1040))">
+                                    
+                                    <label for="car-checkbox-cabine" class="car-title">XL Cabine Simples 2.2 Diesel 4X4 MT 2022</label>
+
                                     <img class="car-help" src="../assets/img/info.png" alt="Mais informações sobre o carro Ford Storm">
                                 </div>
                                 <p class="car-desc">Corporis libero officiis nostrum saepe ullam architecto sit in sunt nihil neque</p>
@@ -74,8 +81,11 @@
                             <img class="car-image" src="../assets/img/xls 2.2 diesel.jpg" alt="Carro Ford Storm">
                             <div class="car-infos">
                                 <div class="car-selection">
-                                    <input class="car-checkbox" type="checkbox">
-                                    <label class="car-title">Ford Ranger XLS 2.2 Diesel 2022</label>
+                                    <input id="car-checkbox-xls" class="car-checkbox" type="checkbox"
+                                    onchange="SetCarToCompare(this, new Car('XLS 2.2 Diesel 4X4 AT 2022', 222790.00, '../assets/img/xls 2.2 diesel.jpg', 3.2, 'Liga Leve 17', 200, 1180, 511, 1821, 232, 1040))">
+
+                                    <label class="car-title" id="car-name">XLS 2.2 Diesel 4X4 AT 2022</label>
+
                                     <img class="car-help" src="../assets/img/info.png" alt="Mais informações sobre o carro Ford Storm">
                                 </div>
                                 <p class="car-desc">Corporis libero officiis nostrum saepe ullam architecto sit in sunt nihil neque</p>
@@ -99,5 +109,7 @@
         </div>
         <img src="../assets/img/ford-96.png" alt="Imagem logo ford">
     </footer>
+
+    <script src="../scripts/compare.js"></script>
 </body>
 </html>
