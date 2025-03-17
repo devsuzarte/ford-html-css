@@ -6,25 +6,29 @@ class Carousel {
     constructor(element, infos) {
         this._element = element;
         this._infos = infos;
+        this._curr = 0
     }
 
-    start(interval) {
-        let curr = 0
-
+    Start(interval) {
         setInterval(() => {
 
             this._element.classList.add('fade-out')
 
             setTimeout(() => {
-                this._element.setAttribute("src", this._infos[curr].img)
+                console.log(this._infos[this._curr].img)
+                this._element.setAttribute("src", this._infos[this._curr].img)
 
                 this._element.classList.remove('fade-out')
                 this._element.classList.add('fade-in')
 
             }, 1000)
 
-            curr === this._infos.length - 1 ? curr = 0 : curr++
+            this._Next()
         }, interval);
+    }
+
+    _Next() {
+        this._curr === this._infos.length - 1 ? this._curr = 0 : this._curr++
     }
 }
 
@@ -35,10 +39,6 @@ const infos = [
     { title: "FORD RANGER 2022", img: "../assets/img/imagem_3.jpg", url: "lancamento.html" }
 ]
 
-// "../assets/img/imagem_1.jpg",
-// "../assets/img/imagem_2.jpg",
-// "../assets/img/imagem_3.jpg"
-
 const carousel = new Carousel(imgTag, infos);
 
-carousel.start(10000);
+carousel.Start(6000);
