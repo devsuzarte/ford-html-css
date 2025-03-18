@@ -4,33 +4,42 @@ const imgTag = document.getElementById("imagem-principal");
 // Carousel
 class Carousel {
     constructor(element, infos) {
-        this._element = element;
-        this._infos = infos;
-        this._curr = 0
+        this.#element = element;
+        this.#infos = infos;
+        this.#curr = 0
     }
 
     Start(interval) {
         setInterval(() => {
 
-            this._element.classList.add('fade-out')
+            this.#element.classList.add('fade-out')
 
             setTimeout(() => {
-                console.log(this._infos[this._curr].img)
-                this._element.setAttribute("src", this._infos[this._curr].img)
+                console.log(this.#infos[this.#curr].img)
+                this.#element.setAttribute("src", this.#infos[this.#curr].img)
 
-                this._element.classList.remove('fade-out')
-                this._element.classList.add('fade-in')
+                this.#element.classList.remove('fade-out')
+                this.#element.classList.add('fade-in')
 
             }, 1000)
 
-            this._Next()
+            this.#Next()
         }, interval);
     }
 
-    _Next() {
-        this._curr === this._infos.length - 1 ? this._curr = 0 : this._curr++
+    #Next() {
+        this.#curr === this.#infos.length - 1 ? this.#curr = 0 : this.#curr++
     }
 }
+
+// IDEIA DE CLASSE PARA CADA CARRO
+// class CarInCarousel {
+//     constructor(title, img, url) {
+//         this._title = title,
+//         this._img = img,
+//         this._url = url
+//     }
+// }
 
 // Variables
 const infos = [

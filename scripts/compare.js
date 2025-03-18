@@ -12,17 +12,17 @@ class Car {
         groundHeight,
         loadCapacity
     ) {
-        this._name = name,
-        this._price = price,
-        this._img = img,
-        this._motor = motor,
-        this._wheel = wheel,
-        this._potency = potency,
-        this._bucketVolume = bucketVolume,
-        this._bucketHeight = bucketHeight,
-        this._veichleHeight = veichleHeight,
-        this._groundHeight = groundHeight,
-        this._loadCapacity = loadCapacity
+        this.name = name,
+        this.price = price,
+        this.img = img,
+        this.motor = motor,
+        this.wheel = wheel,
+        this.potency = potency,
+        this.bucketVolume = bucketVolume,
+        this.bucketHeight = bucketHeight,
+        this.veichleHeight = veichleHeight,
+        this.groundHeight = groundHeight,
+        this.loadCapacity = loadCapacity
     }
 }
 
@@ -31,13 +31,14 @@ const modalCompare = document.getElementById("modal-compare")
 
 const carArr = []
 
-function _GetCarArrPosition(arr, car) {
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i]._name  === car._name)
-            return i;
-    }
-    return -1;
-}
+// Função Não Utilizada
+// function _GetCarArrPosition(arr, car) {
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr[i]._name  === car._name)
+//             return i;
+//     }
+//     return -1;
+// }
 
 function SetCarToCompare(input, car) {
 
@@ -67,7 +68,7 @@ function _UpdateCompareTable() {
 
                 td.appendChild((() => {
                     const img = document.createElement("img")
-                    img.setAttribute("src", car._img)
+                    img.setAttribute("src", car.img)
 
                     return img
                 })())
@@ -75,95 +76,16 @@ function _UpdateCompareTable() {
                 return td
             })())
 
-        // Add Name
-        document.getElementById("car-compare-name")
-            .appendChild((() => {
-                const td = document.createElement("td")
-                td.textContent = car._name
-
-                return td
-            })())
-        
-        // Add Bucket Height
-        document.getElementById("car-compare-bucket-height")
-            .appendChild((() => {
-                const td = document.createElement("td")
-                td.textContent = car._bucketHeight
-
-                return td
-            })())
-        
-        // Add Height
-        document.getElementById("car-compare-height")
-            .appendChild((() => {
-                const td = document.createElement("td")
-                td.textContent = car._veichleHeight
-
-                return td
-            })())
-
-        // Add Ground Height
-        document.getElementById("car-compare-ground-height")
-            .appendChild((() => {
-                const td = document.createElement("td")
-                td.textContent = car._groundHeight
-
-                return td
-            })())
-        
-        // Add Load Capacity
-        document.getElementById("car-compare-load-capacity")
-            .appendChild((() => {
-                const td = document.createElement("td")
-                td.textContent = car._loadCapacity
-
-                return td
-            })())
-
-        // Add Motor
-        document.getElementById("car-compare-motor")
-        .appendChild((() => {
-            const td = document.createElement("td")
-            td.textContent = car._motor
-
-            return td
-        })())
-
-        // Add Potency
-        document.getElementById("car-compare-potency")
-        .appendChild((() => {
-            const td = document.createElement("td")
-            td.textContent = car._potency
-
-            return td
-        })())
-
-        // Add Bucket Volume
-        document.getElementById("car-compare-bucket-volume")
-        .appendChild((() => {
-            const td = document.createElement("td")
-            td.textContent = car._bucketVolume
-
-            return td
-        })())
-
-        // Add Wheel
-        document.getElementById("car-compare-wheel")
-        .appendChild((() => {
-            const td = document.createElement("td")
-            td.textContent = car._wheel
-
-            return td
-        })())
-
-        // Add Price
-        document.getElementById("car-compare-price")
-        .appendChild((() => {
-            const td = document.createElement("td")
-            td.textContent = car._price
-
-            return td
-        })())
+        _AddElement(car, "name", "name")
+        _AddElement(car, "bucket-height", "bucketHeight")
+        _AddElement(car, "height", "height")
+        _AddElement(car, "ground-height", "groundHeight")
+        _AddElement(car, "load-capacity", "loadCapacity")
+        _AddElement(car, "motor", "motor")
+        _AddElement(car, "potency", "potency")
+        _AddElement(car, "bucket-volume", "bucketVolume")
+        _AddElement(car, "wheel", "wheel")
+        _AddElement(car, "price", "price")
     });
 }
 
@@ -181,47 +103,30 @@ function ShowCompare() {
 function HideCompare() {
     modalCompare.close()
 
-    // Remove Image
-    document.getElementById("car-compare-img")
-        .querySelectorAll("td").forEach(td => td.remove())
-    
-    // Remove Image
-    document.getElementById("car-compare-name")
-        .querySelectorAll("td").forEach(td => td.remove())    
-    
-    // Remove Name
-    document.getElementById("car-compare-bucket-height")
-        .querySelectorAll("td").forEach(td => td.remove())
+    _RemoveElements("img");
+    _RemoveElements("name");
+    _RemoveElements("bucket-height");
+    _RemoveElements("height");
+    _RemoveElements("ground-height");
+    _RemoveElements("load-capacity");
+    _RemoveElements("motor");
+    _RemoveElements("potency");
+    _RemoveElements("bucket-volume");
+    _RemoveElements("wheel");
+    _RemoveElements("price");
+}
 
-    // Remove Name
-    document.getElementById("car-compare-height")
+function _RemoveElements(className) {
+    document.getElementById(`car-compare-${className}`)
         .querySelectorAll("td").forEach(td => td.remove())
+}
 
-    // Remove Name
-    document.getElementById("car-compare-ground-height")
-        .querySelectorAll("td").forEach(td => td.remove())
+function _AddElement(car, className, attributeKey) {
+    document.getElementById(`car-compare-${className}`)
+        .appendChild((() => {
+            const td = document.createElement("td")
+            td.textContent = car[attributeKey]
 
-    // Remove Name
-    document.getElementById("car-compare-load-capacity")
-        .querySelectorAll("td").forEach(td => td.remove())
-
-    // Remove Name
-    document.getElementById("car-compare-motor")
-        .querySelectorAll("td").forEach(td => td.remove())
-
-    // Remove Name
-    document.getElementById("car-compare-potency")
-        .querySelectorAll("td").forEach(td => td.remove())
-
-    // Remove Name
-    document.getElementById("car-compare-bucket-volume")
-        .querySelectorAll("td").forEach(td => td.remove())
-
-    // Remove Name
-    document.getElementById("car-compare-wheel")
-        .querySelectorAll("td").forEach(td => td.remove())
-
-    // Remove Name
-    document.getElementById("car-compare-price")
-        .querySelectorAll("td").forEach(td => td.remove())
+            return td
+        })())
 }
