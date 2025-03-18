@@ -53,17 +53,6 @@ video {
     flex-direction: column;
     justify-content: center;
 
-    & button {
-        background-color: #1351d8;
-        color: aliceblue;
-        border: none;
-        padding: 16px;
-        border-radius: 8px;
-        margin-block: 30px;
-        width: 100%;
-        font-weight: 600;
-    }
-
     & h1 {
         text-align: center;
         font-weight: bolder;
@@ -72,7 +61,44 @@ video {
     }
 }
 
+button {
+    background-color: #1351d8;
+    color: aliceblue;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    margin-block: 30px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+}
 
+
+.modal-compare {
+    border: none;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 8px rgb(0, 0, 0, 0.2);
+
+    & table {
+        & tbody {
+            & th {
+                text-align: start;
+                padding: 8px;
+            }
+
+            & tr:nth-child(even) {
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            & tr:nth-child(odd) {
+                background-color: rgb(0, 0, 0, 0.05);
+            }
+        }
+    }
+}
 
 @media (min-width: 768px) {
     .car-table {
