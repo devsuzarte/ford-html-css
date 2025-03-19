@@ -121,7 +121,7 @@
                 </tbody>
             </table>
 
-            <div class="car-submit-button">
+            <div class="car-compare-button">
                 <button type="button" onclick="HideCompare()">Fechar</button>
             </div>
         </dialog>
@@ -137,6 +137,16 @@
         </div>
         <img src="../assets/img/ford-96.png" alt="Imagem logo ford">
     </footer>
+
+    <!-- Apenas um carro escolhido -->
+    <dialog id="error-compare" class="error-compare">
+        <div class="error-bar"><img onclick="CloseErrorPopUp()" src="../assets/img/close-x.png" alt=""></div>
+        <div class="error-container">
+            <div class="error-img"><img src="../assets/img/error.png" alt="Error"></div>
+            <h4 class="error-title"><strong>Erro Na Comparação</strong></h4>
+            <p class="error-desc">Você deve escolher exatamente <strong>dois</strong> carros para realizar a comparação!</p>
+        </div>
+    </dialog>
 
     <script src="../scripts/compare.js"></script>
 </body>

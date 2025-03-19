@@ -28,6 +28,7 @@ class Car {
 
 // HTML Documents
 const modalCompare = document.getElementById("modal-compare")
+const errorCompare = document.getElementById("error-compare")
 
 const carArr = []
 
@@ -50,7 +51,7 @@ function SetCarToCompare(input, car) {
 
     if(carArr.length > 1) {
         input.checked = 0
-        alert("Número máximo de comparações excedido")
+        errorCompare.showModal()
 
         return
     }
@@ -76,22 +77,13 @@ function _UpdateCompareTable() {
                 return td
             })())
 
-        _AddElement(car, "name", "name")
-        _AddElement(car, "bucket-height", "bucketHeight")
-        _AddElement(car, "height", "height")
-        _AddElement(car, "ground-height", "groundHeight")
-        _AddElement(car, "load-capacity", "loadCapacity")
-        _AddElement(car, "motor", "motor")
-        _AddElement(car, "potency", "potency")
-        _AddElement(car, "bucket-volume", "bucketVolume")
-        _AddElement(car, "wheel", "wheel")
-        _AddElement(car, "price", "price")
+            _InsertTableInfos(car)
     });
 }
 
 function ShowCompare() {
     if(carArr.length !== 2) {
-        alert("Você precisa selecionar dois carros para a comparação!")
+        errorCompare.showModal()
         return
     }
 
@@ -102,18 +94,7 @@ function ShowCompare() {
 
 function HideCompare() {
     modalCompare.close()
-
-    _RemoveElements("img");
-    _RemoveElements("name");
-    _RemoveElements("bucket-height");
-    _RemoveElements("height");
-    _RemoveElements("ground-height");
-    _RemoveElements("load-capacity");
-    _RemoveElements("motor");
-    _RemoveElements("potency");
-    _RemoveElements("bucket-volume");
-    _RemoveElements("wheel");
-    _RemoveElements("price");
+    _CleanTableInfos()
 }
 
 function _RemoveElements(className) {
@@ -129,4 +110,35 @@ function _AddElement(car, className, attributeKey) {
 
             return td
         })())
+}
+
+function CloseErrorPopUp() {
+    errorCompare.close()
+}
+
+function _CleanTableInfos() {
+    _RemoveElements("img");
+    _RemoveElements("name");
+    _RemoveElements("bucket-height");
+    _RemoveElements("height");
+    _RemoveElements("ground-height");
+    _RemoveElements("load-capacity");
+    _RemoveElements("motor");
+    _RemoveElements("potency");
+    _RemoveElements("bucket-volume");
+    _RemoveElements("wheel");
+    _RemoveElements("price");
+}
+
+function _InsertTableInfos(car) {
+    _AddElement(car, "name", "name")
+    _AddElement(car, "bucket-height", "bucketHeight")
+    _AddElement(car, "height", "veichleHeight")
+    _AddElement(car, "ground-height", "groundHeight")
+    _AddElement(car, "load-capacity", "loadCapacity")
+    _AddElement(car, "motor", "motor")
+    _AddElement(car, "potency", "potency")
+    _AddElement(car, "bucket-volume", "bucketVolume")
+    _AddElement(car, "wheel", "wheel")
+    _AddElement(car, "price", "price")
 }
