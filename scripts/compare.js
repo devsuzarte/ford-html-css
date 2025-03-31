@@ -126,3 +126,22 @@ function _InsertTableInfos(car) {
     _AddElement(car, "wheel", "wheel")
     _AddElement(car, "price", "price")
 }
+
+function _RemoveElements(className) {
+    document.getElementById(`car-compare-${className}`)
+        .querySelectorAll("td").forEach(td => td.remove())
+}
+
+function _CleanTableInfos() {
+    _RemoveElements("img");
+    _RemoveElements("name");
+    _RemoveElements("bucket-height");
+    _RemoveElements("height");
+    _RemoveElements("ground-height");
+    _RemoveElements("load-capacity");
+    _RemoveElements("motor");
+    _RemoveElements("potency");
+    _RemoveElements("bucket-volume");
+    _RemoveElements("wheel");
+    _RemoveElements("price");
+}
