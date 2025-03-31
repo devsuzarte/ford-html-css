@@ -37,7 +37,8 @@ const carArr = []
 function SetCarToCompare(input, car) {
 
     if(!input.checked) {
-        carArr.pop(car)
+        const carPosition = _GetCarArrPosition(car)
+        carArr.splice(carPosition, 1)
 
         return
     }
@@ -50,6 +51,15 @@ function SetCarToCompare(input, car) {
     }
 
     carArr.push(car)
+}
+
+function _GetCarArrPosition(car) {
+    for(let i = 0; i < carArr.length; i++){
+        if(carArr[i].name === car.name) {
+            return i;
+        }
+    }
+    return -1;
 }
 
 function _UpdateCompareTable() {
