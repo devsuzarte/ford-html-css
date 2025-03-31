@@ -41,8 +41,8 @@ button {
 }
 
 button:hover {
-    font-size: large;
-    transition: font-size 1s;
+    transform: scale(1.05);
+    transition: 0.5s;
 }
 
 @media (min-width: 1024px) {

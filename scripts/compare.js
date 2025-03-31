@@ -32,14 +32,7 @@ const errorCompare = document.getElementById("error-compare")
 
 const carArr = []
 
-// Função Não Utilizada
-// function _GetCarArrPosition(arr, car) {
-//     for(let i = 0; i < arr.length; i++){
-//         if(arr[i]._name  === car._name)
-//             return i;
-//     }
-//     return -1;
-// }
+// Fu
 
 function SetCarToCompare(input, car) {
 
