@@ -32,7 +32,7 @@ const errorCompare = document.getElementById("error-compare")
 
 const carArr = []
 
-// Fu
+// Functions
 
 function SetCarToCompare(input, car) {
 
@@ -90,11 +90,6 @@ function HideCompare() {
     _CleanTableInfos()
 }
 
-function _RemoveElements(className) {
-    document.getElementById(`car-compare-${className}`)
-        .querySelectorAll("td").forEach(td => td.remove())
-}
-
 function _AddElement(car, className, attributeKey) {
     document.getElementById(`car-compare-${className}`)
         .appendChild((() => {
@@ -107,20 +102,6 @@ function _AddElement(car, className, attributeKey) {
 
 function CloseErrorPopUp() {
     errorCompare.close()
-}
-
-function _CleanTableInfos() {
-    _RemoveElements("img");
-    _RemoveElements("name");
-    _RemoveElements("bucket-height");
-    _RemoveElements("height");
-    _RemoveElements("ground-height");
-    _RemoveElements("load-capacity");
-    _RemoveElements("motor");
-    _RemoveElements("potency");
-    _RemoveElements("bucket-volume");
-    _RemoveElements("wheel");
-    _RemoveElements("price");
 }
 
 function _InsertTableInfos(car) {
