@@ -15,29 +15,36 @@ const infos = [
 
 // Carousel
 class Carousel {
-    constructor(tags, infos, interval) {
+    constructor(tags, infos, time) {
         this.tags = tags;
         this.infos = infos;
-        this.interval = interval
+        this.time = time
         this.curr = 0
+        this.interval = null
     }
 
     Start() {
-        setInterval(() => {
+        this.interval = setInterval(() => {
             this.Next()
-        }, this.interval);
+        }, this.time);
+    }
+
+    Reset() {
+        clearInterval(this.interval)
+        this.Start()
     }
 
     Next() {
+        this.Reset()
         this.curr === this.infos.length - 1 ? this.curr = 0 : this.curr++
         this.UpdateImage()
     }
 
     Back() {
+        this.Reset()
         this.curr === 0 ? this.curr = this.infos.length - 1 : this.curr--
         this.UpdateImage()
     }
-
 
     UpdateImage() {
         this.tags.img.setAttribute("src", this.infos[this.curr].img)
