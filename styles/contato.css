@@ -40,8 +40,13 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.grow-up {
     transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.reduce {
+    transform: scale(1.0);
     transition: 0.5s;
 }
 

@@ -78,9 +78,10 @@ function _UpdateCompareTable() {
                 })())
 
                 return td
-            })())
+            })
+        ())
 
-            _InsertTableInfos(car)
+        _InsertTableInfos(car)
     });
 }
 
