@@ -38,20 +38,34 @@
                 <form action="" method="post">
                     <h3>Sobre Você</h3>
     
-                    <input type="text" placeholder="Nome Completo" required>
-                    <input type="email" placeholder="E-mail" required>
-                    <input type="text" placeholder="Telefone" required>
+                    <input id="contact-name" type="text" placeholder="Nome Completo" required>
+                    <input id="contact-email" type="email" placeholder="E-mail" required>
+                    <input id="contact-phone" type="text" placeholder="Telefone" required>
     
-                    <select required>
+                    <select id="contact-type" required>
                         <option value="" disabled selected>Tipo de Contato</option>
                         <option value="ELOGIO">Elogio</option>
                         <option value="SOLICITACAO">Solicitação</option>
                         <option value="RECLAMACAO">Reclamação</option>
                     </select>
     
-                    <textarea cols="30" rows="10" placeholder="Descreva sua solicitação..."></textarea>
+                    <textarea id="contact-desc" cols="30" rows="10" placeholder="Descreva sua solicitação..."></textarea>
                 
-                    <button id="btnForm" type="submit">Enviar</button>
+                    <p>Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será possível editar ou remover tais dados. <a href="">Termos e Condições</a></p>
+
+                    <div class="checkboxes">
+                        <div id="terms" class="checks">
+                            <input id="input-terms" type="checkbox">
+                            <label for="input-terms">Sim, li e concordo com os vossos termos.</label>
+                        </div>
+    
+                        <div id="news" class="checks">
+                            <input id="input-news" type="checkbox">
+                            <label for="input-news">Sim, também quero receber descontos e novidades.</label>
+                        </div>
+                    </div>
+
+                    <button id="btnForm" type="submit" disabled>Enviar</button>
                 </form>
             </div>
         </div>

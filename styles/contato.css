@@ -40,9 +40,28 @@ button {
     cursor: pointer;
 }
 
+button:disabled {
+    background-color: gray;
+    cursor: auto;
+}
+
 .grow-up {
     transform: scale(1.05);
     transition: 0.5s;
+}
+
+.checks {
+    display: flex;
+    align-items: center;
+
+    & label {
+        margin-left: 8px;
+    }
+
+    & input {
+        transform: scale(1.25);
+        cursor: pointer;
+    }
 }
 
 .reduce {
