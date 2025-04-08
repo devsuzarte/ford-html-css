@@ -34,15 +34,12 @@ btnForm.addEventListener("click", () => {
     const contactEmail = document.getElementById("contact-email").value
     const contactPhone = document.getElementById("contact-phone").value
     const contactTypeValue = document.getElementById("contact-type").value
-    let contactDesc = document.getElementById("contact-desc").value
+    const contactDesc = document.getElementById("contact-desc").value
 
-    if(!contactName || !contactEmail || !contactPhone || !contactTypeValue) {
+    if(!contactName || !contactEmail || !contactPhone || !contactTypeValue || !contactDesc) {
         alert("Você possui campos não preenchidos!")
         return
     }
 
-    if(!contactDesc) contactDesc = "";
-
     alert(`Nome: ${contactName}\nEmail: ${contactEmail}\nTelefone: ${contactPhone}\nTipo de Contato: ${contactTypeValue}\nDescrição: ${contactDesc}`)
-    return
 })
